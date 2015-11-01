@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     btnSend.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         firebase.push().setValue(new Chat(username, inputMessage.getText().toString()));
+        inputMessage.setText("");
       }
     });
 
