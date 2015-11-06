@@ -1,7 +1,12 @@
-package com.pratamawijaya.chatterseds;
+package com.pratamawijaya.chatterseds.base;
 
 import android.app.Application;
+import android.content.ContextWrapper;
 import com.firebase.client.Firebase;
+import com.pratamawijaya.chatterseds.BuildConfig;
+import com.pratamawijaya.chatterseds.Config;
+import com.pratamawijaya.chatterseds.helper.Prefs;
+import timber.log.Timber;
 
 /**
  * Created by : pratama - set.mnemonix@gmail.com
@@ -22,6 +27,14 @@ public class BaseApplication extends Application {
     Firebase.getDefaultConfig().setPersistenceEnabled(true);
 
     firebase = new Firebase(FIREBASE_URL).child(CHILD_MESSAGE);
+
+    if (BuildConfig.DEBUG) Timber.plant(new Timber.DebugTree());
+
+    new Prefs.Builder().setContext(this)
+        .setMode(ContextWrapper.MODE_PRIVATE)
+        .setPrefsName(getPackageName())
+        .setUseDefaultSharedPreference(true)
+        .build();
   }
 
   public static Firebase getFirebase() {
