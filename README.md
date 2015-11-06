@@ -8,3 +8,8 @@ rekan-rekan mahasiswa/i UGM dengan bantuan dari rekan-rekan Innovative Academy U
 
 ##Todo
 - Ubah `firebase_url` yang ada di file `BaseApplication.java` dengan alamat firebase anda
+
+##Pengembangan
+- Login via provider `google` `facebook` other, username menggunakan dari profider
+- chat group
+- implement firebase security
