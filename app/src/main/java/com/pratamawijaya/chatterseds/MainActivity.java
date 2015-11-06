@@ -44,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
     inputMessage = (EditText) findViewById(R.id.input_message);
     btnSend = (Button) findViewById(R.id.btn_send);
+
     // initialize recyclerview
     recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-    final Firebase firebase = new Firebase("https://pratamalabs.firebaseio.com/eds");
+    final Firebase firebase = BaseApplication.getFirebase();
 
     btnSend.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
