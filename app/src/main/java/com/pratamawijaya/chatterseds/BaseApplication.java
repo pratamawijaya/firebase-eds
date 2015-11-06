@@ -10,8 +10,7 @@ import com.firebase.client.Firebase;
  */
 public class BaseApplication extends Application {
 
-  // fixme : ganti firebase urlnya
-  private static final String FIREBASE_URL = "https://YOUR_FIREBASE_URL.firebaseio.com/";
+  private static final String FIREBASE_URL = "" + Config.FIREBASE_ROOT;
   private static final String CHILD_MESSAGE = "message";
   private static Firebase firebase;
 
